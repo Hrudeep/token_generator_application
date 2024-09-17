@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { TextField, Button } from '@mui/material';
+import TokenDisplay from './TokenDisplay';
 
 const TokenForm = () => {
   const [form, setForm] = useState({
@@ -107,7 +108,12 @@ const TokenForm = () => {
         </Button>
       </div>
 
-    
+      <TokenDisplay
+        blueTokens={blueTokens}
+        redTokens={redTokens}
+        blueTokensPerRow={parseInt(form.blueTokensPerRow) || 1}
+        redTokensPerRow={parseInt(form.redTokensPerRow) || 1}
+      />
     </div>
   );
 };
